@@ -29,7 +29,7 @@ def extract_feat(imlist, dname):
     for start, end in batch:
         batch_image = np.zeros([batch_size, 3, IMG_HEIGHT, IMG_WIDTH])
         batch_imname = imlist[start:end]
-        for b in xrange(end-start):
+        for b in range(end-start):
             imname = os.path.join(image_root, batch_imname[b].encode('utf-8'))
             I = imresize(cv2.imread(imname), (IMG_HEIGHT, IMG_WIDTH))-mean
             I = np.transpose(I, (2, 0, 1))

@@ -42,7 +42,7 @@ def main(params):
 
     if params['split'] == 1:
 
-        print 'Loading annotations and questions...'
+        print ('Loading annotations and questions...')
         train_anno = json.load(open('annotations/v2_mscoco_train2014_annotations.json', 'r'))
         val_anno = json.load(open('annotations/v2_mscoco_val2014_annotations.json', 'r'))
 
@@ -69,7 +69,7 @@ def main(params):
 
             test.append({'ques_id': question_id, 'img_path': image_path, 'question': question, 'ans': ans})
     else:
-        print 'Loading annotations and questions...'
+        print ('Loading annotations and questions...')
         train_anno = json.load(open('annotations/v2_mscoco_train2014_annotations.json', 'r'))
         val_anno = json.load(open('annotations/v2_mscoco_val2014_annotations.json', 'r'))
 
@@ -106,7 +106,7 @@ def main(params):
 
             test.append({'ques_id': question_id, 'img_path': image_path, 'question': question, 'ans': ans})
 
-    print 'Training sample %d, Testing sample %d...' %(len(train), len(test))
+    print ('Training sample %d, Testing sample %d...' %(len(train), len(test)))
 
     json.dump(train, open('vqa_raw_train.json', 'w'))
     json.dump(test, open('vqa_raw_test.json', 'w'))
@@ -121,8 +121,8 @@ if __name__ == "__main__":
   
     args = parser.parse_args()
     params = vars(args)
-    print 'parsed input parameters:'
-    print json.dumps(params, indent = 2)
+    print ('parsed input parameters:')
+    print (json.dumps(params, indent = 2))
     main(params)
 
 
